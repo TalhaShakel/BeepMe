@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class MyProfileScreen extends StatelessWidget {
   const MyProfileScreen({super.key});
@@ -30,26 +31,35 @@ class MyProfileScreen extends StatelessWidget {
               height: 130,
               color: ColorConstants.primaryDarkColor,
               child: ListTile(
-                leading: Container(
-                  width: 86,
-                  child: Row(
+                trailing: "Log Out".text.white.bold.make(),
+                leading:
+                    ImageUtils.buildImage(ImageFiles.edtProfBackArrow, 24, 24),
+                title: TextUtils.getText(StringConstants.strJohnDoe, 14,
+                    AppConstants.robotoRegularFont, Colors.white),
+                subtitle: Align(
+                  alignment: Alignment.topLeft,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      ImageUtils.buildImage(
-                          ImageFiles.edtProfBackArrow, 24, 24),
-                      const SizedBox(
-                        width: 16,
-                      ),
-                      ImageUtils.buildImage(
-                          ImageFiles.mainProfAvatarIcn, 46, 46),
+                      TextUtils.getText(StringConstants.strPersonalBal, 10,
+                          AppConstants.robotoRegularFont, Colors.white),
+                      Row(
+                        children: [
+                          "4.9".text.white.make(),
+                          Icon(
+                            Icons.star,
+                            color: Vx.white,
+                          )
+                        ],
+                      )
                     ],
                   ),
                 ),
-                title: TextUtils.getText(StringConstants.strJohnDoe, 14,
-                    AppConstants.robotoRegularFont, Colors.white),
-                subtitle: TextUtils.getText(StringConstants.strPersonalBal, 10,
-                    AppConstants.robotoRegularFont, Colors.white),
               ),
             ),
+            getRoundCorneredCircle(),
+            //  Container(),
+
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
@@ -58,7 +68,6 @@ class MyProfileScreen extends StatelessWidget {
                     const SizedBox(
                       height: 16,
                     ),
-                    getRoundCorneredCircle(),
                     SizedBox(
                       height: 24,
                     ),
@@ -130,26 +139,60 @@ class MyProfileScreen extends StatelessWidget {
                     SizedBox(
                       height: 16,
                     ),
-                    Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 20),
-                      height: 48,
-                      width: MediaQuery.of(context).size.width,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.pushNamed(
-                              context, Routes.paymentMethodSelectionScreen);
-                        },
-                        style: ElevatedButton.styleFrom(
-                          primary: ColorConstants.primaryDarkColor,
-                          onPrimary: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12.0),
+                    ///////////////////////////////////////
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        SizedBox(
+                          height: 50,
+                          width: 140,
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            child: Text("EDIT PROFILE"),
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.red,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10)),
+                            ),
                           ),
                         ),
-                        child: TextUtils.getText(StringConstants.strBEEP, 16,
-                            AppConstants.robotoBoldFont, Colors.white),
-                      ),
+                        Container(
+                          width: 160,
+                          height: 48,
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.red),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
+                          child: Row(children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 25.0),
+                              child: Text(
+                                "REVIEWS",
+                                style: TextStyle(
+                                    color: Colors.red,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 20.0, top: 3, bottom: 3),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.red, shape: BoxShape.circle),
+                                child: IconButton(
+                                    // padding: EdgeInsets.only(left: 40),
+                                    onPressed: () {},
+                                    icon: Icon(
+                                      Icons.arrow_forward,
+                                      color: Colors.white,
+                                    )),
+                              ),
+                            )
+                          ]),
+                        ),
+                      ],
                     ),
+                    /////////////////////////////////////////
                     SizedBox(
                       height: 16,
                     ),
@@ -245,6 +288,7 @@ class MyProfileScreen extends StatelessWidget {
       decoration: BoxDecoration(color: ColorConstants.primaryDarkColor),
       child: Container(
         decoration: BoxDecoration(shape: BoxShape.circle),
+        child: ImageUtils.buildImage(ImageFiles.srchProfAvatarImg, 40, 40),
       ),
     );
   }
