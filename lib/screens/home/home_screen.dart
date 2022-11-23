@@ -1,3 +1,4 @@
+import 'package:beep_me/MyProfile/MyProfileScreen.dart';
 import 'package:beep_me/constants/color_constants.dart';
 import 'package:beep_me/constants/string_constants.dart';
 import 'package:beep_me/screens/home/widgets/round_buttons.dart';
@@ -97,9 +98,12 @@ class HomeScreenState extends State<HomeScreen> {
                               44,
                               32,
                               32,
-                              ColorConstants.greenColor,
-                              () {},
-                              "40%"),
+                              ColorConstants.greenColor, () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: ((context) => MyProfileScreen())));
+                          }, "40%"),
                           const SizedBox(
                             height: 8,
                           ),
