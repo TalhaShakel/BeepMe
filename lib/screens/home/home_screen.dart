@@ -5,7 +5,10 @@ import 'package:beep_me/ui_utils/image_files.dart';
 import 'package:beep_me/ui_utils/image_utils.dart';
 import 'package:beep_me/ui_utils/text_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
+import '../../Controllers/MianController.dart';
 import '../../constants/app_constants.dart';
 import '../../constants/route_names.dart';
 
@@ -29,6 +32,7 @@ class HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var controller = Get.put(MainController());
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: ColorConstants.whiteColor,

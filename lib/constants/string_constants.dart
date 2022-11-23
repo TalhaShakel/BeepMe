@@ -1,4 +1,7 @@
 class StringConstants {
+//
+  static const String strViewBeep = "View Beep";
+
   static const String splashScreenTitle = "BeepMe";
   static const String splashScreenVersion = "v2.1.0";
 

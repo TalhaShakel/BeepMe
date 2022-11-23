@@ -1,11 +1,11 @@
-class Routes{
+class Routes {
   static String onBoardingScreen = "/onBoardingScreen";
   static String loginWithScreen = "/LoginWithScreen";
   static String facebookLoginScreen = "/facebookLoginScreen";
   static String googleLoginScreen = "/googleLoginScreen";
   static String homeScreen = "/homeScreen";
   static String edtProfileScreen = "/editProfileScreen";
-  
+  static String viewBeepScreen = "/View Beep";
 
   static String addSocialMediaScreen = "/addSocialMediaScreen";
   static String beepOfferScreen = "/beepOfferScreen";
