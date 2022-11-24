@@ -1,6 +1,7 @@
 import 'package:beep_me/MyProfile/MyProfileScreen.dart';
 import 'package:beep_me/constants/color_constants.dart';
 import 'package:beep_me/constants/string_constants.dart';
+import 'package:beep_me/screens/ActiveBeep/ManageBeepScreen.dart';
 import 'package:beep_me/screens/View_/Viewbeepscreen.dart';
 import 'package:beep_me/screens/home/widgets/round_buttons.dart';
 import 'package:beep_me/ui_utils/image_files.dart';
@@ -166,8 +167,12 @@ class HomeScreenState extends State<HomeScreen> {
                               44,
                               36,
                               36,
-                              ColorConstants.purplePaleColor,
-                              () {}),
+                              ColorConstants.purplePaleColor, () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) => ManageBeepScreen()));
+                          }),
                           const SizedBox(
                             height: 8,
                           ),

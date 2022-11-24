@@ -1,3 +1,5 @@
+import 'package:beep_me/MyProfile/MyProfileClientReviws.dart';
+import 'package:beep_me/MyProfile/MyProfileEditScreen.dart';
 import 'package:beep_me/constants/app_constants.dart';
 import 'package:beep_me/constants/color_constants.dart';
 import 'package:beep_me/constants/route_names.dart';
@@ -147,7 +149,12 @@ class MyProfileScreen extends StatelessWidget {
                           height: 50,
                           width: 140,
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (_) => MyProfileEditScreen()));
+                            },
                             child: Text("EDIT PROFILE"),
                             style: ElevatedButton.styleFrom(
                               primary: Colors.red,
@@ -181,7 +188,13 @@ class MyProfileScreen extends StatelessWidget {
                                     color: Colors.red, shape: BoxShape.circle),
                                 child: IconButton(
                                     // padding: EdgeInsets.only(left: 40),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (_) =>
+                                                  MyProfileClientReviews()));
+                                    },
                                     icon: Icon(
                                       Icons.arrow_forward,
                                       color: Colors.white,
