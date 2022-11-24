@@ -1,6 +1,7 @@
 import 'package:beep_me/MyProfile/MyProfileScreen.dart';
 import 'package:beep_me/constants/color_constants.dart';
 import 'package:beep_me/constants/string_constants.dart';
+import 'package:beep_me/screens/View_/Viewbeepscreen.dart';
 import 'package:beep_me/screens/home/widgets/round_buttons.dart';
 import 'package:beep_me/ui_utils/image_files.dart';
 import 'package:beep_me/ui_utils/image_utils.dart';
@@ -75,7 +76,8 @@ class HomeScreenState extends State<HomeScreen> {
                 ),
                 RoundedButton.roundedImageButton(ImageFiles.homeMsgWhiteIcn,
                     130, 65, 60, 60, ColorConstants.yellowColor, () {
-                  Navigator.pushNamed(context, Routes.edtProfileScreen);
+                  // Navigator.pushNamed(context, Routes.edtProfileScreen);
+                  Get.to(() => ViewBeep());
                 }),
                 const SizedBox(
                   height: 16,

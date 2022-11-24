@@ -10,13 +10,17 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class NotificationScreen extends StatelessWidget {
-  const NotificationScreen({super.key});
+class ViewOfferDetailsScreen extends StatelessWidget {
+  const ViewOfferDetailsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: ColorConstants.primaryDarkColor,
+        title: "Notification".text.make(),
+        centerTitle: true,
+      ),
       resizeToAvoidBottomInset: false,
       backgroundColor: ColorConstants.whiteColor,
       body: SingleChildScrollView(

@@ -1,3 +1,5 @@
+import 'package:beep_me/screens/View_/NotificationScreen.dart';
+import 'package:beep_me/screens/View_/ViweProve.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -150,19 +152,24 @@ class ViewBeep extends StatelessWidget {
                 Spacer(),
                 "Proof Task".text.make(),
                 10.widthBox,
-                Container(
-                    decoration: BoxDecoration(
-                        color: ColorConstants.primaryDarkColor,
-                        border:
-                            Border.all(color: ColorConstants.primaryDarkColor),
-                        borderRadius: BorderRadius.circular(100.r)),
-                    child: Padding(
-                      padding: const EdgeInsets.all(14.0),
-                      child: Icon(
-                        Icons.arrow_forward,
-                        color: Colors.white,
-                      ),
-                    ))
+                GestureDetector(
+                  onTap: () {
+                    Get.to(() => ViewProve());
+                  },
+                  child: Container(
+                      decoration: BoxDecoration(
+                          color: ColorConstants.primaryDarkColor,
+                          border: Border.all(
+                              color: ColorConstants.primaryDarkColor),
+                          borderRadius: BorderRadius.circular(100.r)),
+                      child: Padding(
+                        padding: const EdgeInsets.all(14.0),
+                        child: Icon(
+                          Icons.arrow_forward,
+                          color: Colors.white,
+                        ),
+                      )),
+                )
               ],
             ),
           ),
@@ -171,34 +178,39 @@ class ViewBeep extends StatelessWidget {
     );
   }
 
-  Container viewOffer() {
-    return Container(
-      height: 135.h,
-      width: 388.w,
-      decoration: BoxDecoration(
-          border: Border.all(color: ColorConstants.primaryDarkColor),
-          borderRadius: BorderRadius.circular(12.r)),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          ListTile(
-            title: "\$200".text.make(),
-            subtitle: "Shoes advertisement".text.make(),
-            leading: Image.asset("assets/Rectangle 127.png"),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(14.0),
-            child: Row(
-              children: [
-                "02/12/2022".text.make(),
-                Spacer(),
-                "Duration".text.make(),
-                10.widthBox,
-                "20 Days".text.make(),
-              ],
+  viewOffer() {
+    return GestureDetector(
+      onTap: () {
+        Get.to(() => ViewOfferDetailsScreen());
+      },
+      child: Container(
+        height: 135.h,
+        width: 388.w,
+        decoration: BoxDecoration(
+            border: Border.all(color: ColorConstants.primaryDarkColor),
+            borderRadius: BorderRadius.circular(12.r)),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            ListTile(
+              title: "\$200".text.make(),
+              subtitle: "Shoes advertisement".text.make(),
+              leading: Image.asset("assets/Rectangle 127.png"),
             ),
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.all(14.0),
+              child: Row(
+                children: [
+                  "02/12/2022".text.make(),
+                  Spacer(),
+                  "Duration".text.make(),
+                  10.widthBox,
+                  "20 Days".text.make(),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
