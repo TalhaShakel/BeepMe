@@ -107,76 +107,118 @@ class ViewBeep extends StatelessWidget {
 
   Container activeoffer() {
     return Container(
-      height: 135.h,
+      height: 145.h,
       width: 388.w,
       decoration: BoxDecoration(
           border: Border.all(color: ColorConstants.primaryDarkColor),
           borderRadius: BorderRadius.circular(12.r)),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          ListTile(
-            title: "\$200".text.make(),
-            subtitle: "Shoes advertisement".text.make(),
-            leading: Image.asset("assets/Rectangle 127.png"),
-            trailing: Card(
-                color: Vx.hexToColor("#FFF7E9"),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: "Active".text.make(),
-                )),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(14.0),
-            child: Row(
-              children: [
-                "02/12/2022".text.make(),
-                Card(
-                    color: ColorConstants.primaryDarkColor,
-                    child: Padding(
-                      padding: const EdgeInsets.all(3.0),
-                      child: "02".text.white.make(),
-                    )),
-                Card(
-                    color: ColorConstants.primaryDarkColor,
-                    child: Padding(
-                      padding: const EdgeInsets.all(3.0),
-                      child: "02".text.white.make(),
-                    )),
-                Card(
-                    color: ColorConstants.primaryDarkColor,
-                    child: Padding(
-                      padding: const EdgeInsets.all(3.0),
-                      child: "02".text.white.make(),
-                    )),
-                Spacer(),
-                "Proof Task".text.make(),
-                10.widthBox,
-                GestureDetector(
-                  onTap: () {
-                    Get.to(() => ViewProve());
-                  },
-                  child: Container(
-                      decoration: BoxDecoration(
-                          color: ColorConstants.primaryDarkColor,
-                          border: Border.all(
-                              color: ColorConstants.primaryDarkColor),
-                          borderRadius: BorderRadius.circular(100.r)),
-                      child: Padding(
-                        padding: const EdgeInsets.all(14.0),
-                        child: Icon(
-                          Icons.arrow_forward,
-                          color: Colors.white,
-                        ),
-                      )),
-                )
-              ],
+      child: Padding(
+        padding: const EdgeInsets.only(top: 8.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            ListTile(
+              title: "\$200".text.make(),
+              subtitle: "Shoes advertisement".text.make(),
+              leading: Image.asset("assets/Rectangle 127.png"),
+              trailing: Card(
+                  color: Vx.hexToColor("#FFF7E9"),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: "Active".text.make(),
+                  )),
             ),
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.all(14.0),
+              child: Row(
+                children: [
+                  // "02/12/2022".text.make(),
+                  Column(
+                    children: [
+                      Card(
+                          color: ColorConstants.primaryDarkColor,
+                          child: Padding(
+                            padding: const EdgeInsets.all(3.0),
+                            child: "02".text.white.make(),
+                          )),
+                      Text(
+                        "DAYS",
+                        style: TextStyle(fontSize: 5),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Card(
+                          color: ColorConstants.primaryDarkColor,
+                          child: Padding(
+                            padding: const EdgeInsets.all(3.0),
+                            child: "03".text.white.make(),
+                          )),
+                      Text(
+                        "HOURS",
+                        style: TextStyle(fontSize: 5),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Card(
+                          color: ColorConstants.primaryDarkColor,
+                          child: Padding(
+                            padding: const EdgeInsets.all(3.0),
+                            child: "30".text.white.make(),
+                          )),
+                      Text(
+                        "MINUTES",
+                        style: TextStyle(fontSize: 5),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Card(
+                          color: ColorConstants.primaryDarkColor,
+                          child: Padding(
+                            padding: const EdgeInsets.all(3.0),
+                            child: "20".text.white.make(),
+                          )),
+                      Text(
+                        "SECONDS",
+                        style: TextStyle(fontSize: 5),
+                      ),
+                    ],
+                  ),
+                  Spacer(),
+                  "Proof Task".text.make(),
+                  10.widthBox,
+                  GestureDetector(
+                    onTap: () {
+                    },
+                    child: Container(
+                        height: 40,
+                        width: 40,
+                        decoration: BoxDecoration(
+                            color: ColorConstants.primaryDarkColor,
+                            border: Border.all(
+                                color: ColorConstants.primaryDarkColor),
+                            borderRadius: BorderRadius.circular(100.r)),
+                        child: Center(
+                          child: Icon(
+                            Icons.arrow_forward,
+                            color: Colors.white,
+                          ),
+                        )),
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
+
 
   viewOffer() {
     return GestureDetector(
