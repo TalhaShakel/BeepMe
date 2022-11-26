@@ -2,6 +2,7 @@ import 'package:beep_me/MyProfile/MyProfileClientReviws.dart';
 import 'package:beep_me/constants/color_constants.dart';
 import 'package:beep_me/constants/route_names.dart';
 import 'package:beep_me/screens/ActiveBeep/ProofScreen.dart';
+import 'package:beep_me/screens/InviteFreind/invitefriendScreen.dart';
 // import 'package:beep_me/screens/View_/NotificationScreen.dart';
 // import 'package:beep_me/screens/View_/Viewbeepscreen.dart';
 // import 'package:beep_me/screens/View_/ViweProve.dart';
@@ -46,7 +47,7 @@ class MyApp extends StatelessWidget {
             //home: const SplashScreen(),
             initialRoute: "/",
             routes: {
-              '/': (context) => const SplashScreen(),
+              '/': (context) => const HomeScreen  (),
               Routes.onBoardingScreen: (context) => const OnBoardingScreen(),
               Routes.loginWithScreen: (context) => const LoginWithScreen(),
               Routes.facebookLoginScreen: (context) =>

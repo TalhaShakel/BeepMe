@@ -2,14 +2,18 @@ import 'package:beep_me/MyProfile/MyProfileScreen.dart';
 import 'package:beep_me/constants/color_constants.dart';
 import 'package:beep_me/constants/string_constants.dart';
 import 'package:beep_me/screens/ActiveBeep/ManageBeepScreen.dart';
+import 'package:beep_me/screens/HomePayment/completeBeepScreen.dart';
+import 'package:beep_me/screens/InviteFreind/invitefriendScreen.dart';
 import 'package:beep_me/screens/View_/Viewbeepscreen.dart';
 import 'package:beep_me/screens/home/widgets/round_buttons.dart';
+import 'package:beep_me/screens/prof_screen/edt_profile_screen.dart';
 import 'package:beep_me/ui_utils/image_files.dart';
 import 'package:beep_me/ui_utils/image_utils.dart';
 import 'package:beep_me/ui_utils/text_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 import '../../Controllers/MianController.dart';
 import '../../constants/app_constants.dart';
@@ -78,7 +82,8 @@ class HomeScreenState extends State<HomeScreen> {
                 RoundedButton.roundedImageButton(ImageFiles.homeMsgWhiteIcn,
                     130, 65, 60, 60, ColorConstants.yellowColor, () {
                   // Navigator.pushNamed(context, Routes.edtProfileScreen);
-                  Get.to(() => ViewBeep());
+                  Get.to(EditProfileScreen());
+                  // Get.to(() => ViewBeep());
                 }),
                 const SizedBox(
                   height: 16,
@@ -122,8 +127,9 @@ class HomeScreenState extends State<HomeScreen> {
                               44,
                               36,
                               36,
-                              ColorConstants.greenPaleColor,
-                              () {}),
+                              ColorConstants.greenPaleColor, () {
+                            Get.to(CompleteBeep());
+                          }),
                           const SizedBox(
                             height: 8,
                           ),
@@ -150,8 +156,9 @@ class HomeScreenState extends State<HomeScreen> {
                               44,
                               32,
                               32,
-                              ColorConstants.purpleColor,
-                              () {}),
+                              ColorConstants.purpleColor, () {
+                            Get.to(InviteFriend());
+                          }),
                           const SizedBox(
                             height: 8,
                           ),
@@ -183,6 +190,7 @@ class HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
+                10.heightBox,
               ],
             ),
           )),
