@@ -20,7 +20,13 @@ class MainController extends GetxController {
 
   bool isActive_Offers = true;
   isActiveOffers(isAllMessage1) {
-     isActive_Offers = isAllMessage1;
+    isActive_Offers = isAllMessage1;
+    refresh();
+  }
+
+  bool isActive_Beeps = true;
+  isActiveBeeps(isAllMessage1) {
+    isActive_Beeps = isAllMessage1;
     refresh();
   }
 

@@ -5,6 +5,8 @@ import 'package:beep_me/ui_utils/image_files.dart';
 import 'package:beep_me/ui_utils/image_utils.dart';
 import 'package:beep_me/ui_utils/text_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 import '../../../constants/app_constants.dart';
@@ -84,37 +86,50 @@ class OnBoardingScreenState extends State<OnBoardingScreen> {
                           const SizedBox(
                             height: 60,
                           ),
-                          TextUtils.getText(StringConstants.advertiseOnBoarding,
-                              20, AppConstants.robotoBoldFont, Colors.black, TextAlign.center)
-                        ],
-                      ))),
-              PageViewModel(
-                  title: "",
-                  bodyWidget: Container(
-                      padding: const EdgeInsets.only(top: 100),
-                      child: Column(
-                        children: [
-                          ImageUtils.buildImage(
-                              ImageFiles.onBoardingImage3, 271, 307),
-                          const SizedBox(
-                            height: 60,
-                          ),
                           TextUtils.getText(
-                              StringConstants.clickAdOnBoarding,
+                              StringConstants.advertiseOnBoarding,
                               20,
                               AppConstants.robotoBoldFont,
                               Colors.black,
-                              TextAlign.center),
-
-                          Padding(
-                            padding: const EdgeInsets.only(top: 80),
-                            child:  ButtonUtils.getRoundedCornerElevatedButton(
-                                StringConstants.getStartedOnBoarding, () {
-                              Navigator.pushNamed(context, Routes.loginWithScreen);
-                            }),
-                          ),
+                              TextAlign.center)
                         ],
                       ))),
+              PageViewModel(
+                  useScrollView: false,
+                  title: "",
+                  bodyWidget: FittedBox(
+                    child: Container(
+                        height: Get.height * 0.8,
+                        width: Get.width,
+                        // padding: const EdgeInsets.only(top: 100),
+                        child: Column(
+                          // direction: Axis.vertical,
+                          children: [
+                            // ImageUtils.buildImage(
+                            //     ImageFiles.onBoardingImage3, 271.w, 307.h),
+                            Image.asset(
+                              "assets/images/onboarding_screen/image3.png",
+                              height: 307.h,
+                              width: 271.w,
+                            ),
+                            // SizedBox(
+                            //   height: 60.h,
+                            // ),
+                            TextUtils.getText(
+                                StringConstants.clickAdOnBoarding,
+                                20.sp,
+                                AppConstants.robotoBoldFont,
+                                Colors.black,
+                                TextAlign.center),
+                            Spacer(),
+                            ButtonUtils.getRoundedCornerElevatedButton(
+                                StringConstants.getStartedOnBoarding, () {
+                              Navigator.pushNamed(
+                                  context, Routes.loginWithScreen);
+                            }),
+                          ],
+                        )),
+                  )),
             ]),
       ),
     );

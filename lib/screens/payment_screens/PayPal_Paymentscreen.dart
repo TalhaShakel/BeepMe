@@ -29,9 +29,12 @@ class PayPal_Payment_screen extends StatelessWidget {
             height: 24,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
-            child: ImageUtils.buildImage(ImageFiles.paymentPaypalCard,
-                MediaQuery.of(context).size.width, 200),
+            padding: EdgeInsets.symmetric(vertical: 10),
+            child: ImageUtils.buildImage(
+              ImageFiles.paymentPaypalCard,
+              MediaQuery.of(context).size.width,
+              200,
+            ),
           ),
           const SizedBox(
             height: 24,

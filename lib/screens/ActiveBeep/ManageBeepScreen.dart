@@ -43,62 +43,69 @@ class ManageBeepScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                     border: Border.all(color: ColorConstants.primaryDarkColor),
                     borderRadius: BorderRadius.circular(10.r)),
-                child: FittedBox(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          controller.isActiveOffers(true);
-                        },
-                        child: Container(
-                          height: 48.h,
-                          width: 194.w,
-                          child: Card(
-                            color: controller.isActive_Offers
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        controller.isActiveBeeps(true);
+                      },
+                      child: Container(
+                        // height: 48.h,
+                        // width: 194.w,
+
+                        height: 48.h,
+                        width: Get.width / 2 - 21,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.white),
+                          borderRadius: BorderRadius.circular(10.r),
+                          color: controller.isActive_Beeps
+                              ? ColorConstants.primaryDarkColor
+                              : Vx.white,
+                        ),
+                        child: Center(
+                          child: "completed campaigns"
+                              .text
+                              .color(controller.isActive_Beeps
+                                  ? Vx.white
+                                  : ColorConstants.primaryDarkColor)
+                              .size(14.sp)
+                              .make(),
+                        ),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        controller.isActiveBeeps(false);
+                      },
+                      child: Container(
+                        // height: 48.h,
+                        // width: 194.w,
+                        height: 48.h,
+                        width: Get.width / 2 - 21,
+                        decoration: BoxDecoration(
+                            color: controller.isActive_Beeps == false
                                 ? ColorConstants.primaryDarkColor
                                 : Vx.white,
-                            child: Center(
-                              child: "completed campaigns"
-                                  .text
-                                  .color(controller.isActive_Offers
-                                      ? Vx.white
-                                      : ColorConstants.primaryDarkColor)
-                                  .size(14.sp)
-                                  .make(),
-                            ),
-                          ),
+                            border: Border.all(color: Colors.white),
+                            borderRadius: BorderRadius.circular(10.r)),
+                        child: Center(
+                          child: "ACTIVE BEEPS"
+                              .text
+                              .center
+                              .color(controller.isActive_Beeps == false
+                                  ? Vx.white
+                                  : ColorConstants.primaryDarkColor)
+                              .size(14.sp)
+                              .make(),
                         ),
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          controller.isActiveOffers(false);
-                        },
-                        child: Container(
-                          height: 48.h,
-                          width: 194.w,
-                          child: Card(
-                              color: controller.isActive_Offers == false
-                                  ? ColorConstants.primaryDarkColor
-                                  : Vx.white,
-                              child: Center(
-                                child: "ACTIVE BEEPS"
-                                    .text
-                                    .center
-                                    .color(controller.isActive_Offers == false
-                                        ? Vx.white
-                                        : ColorConstants.primaryDarkColor)
-                                    .size(14.sp)
-                                    .make(),
-                              )),
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
               15.heightBox,
-              controller.isActive_Offers ? completedCompaigns() : viewoffer()
+              controller.isActive_Beeps ? completedCompaigns() : viewoffer()
             ],
           );
         }),

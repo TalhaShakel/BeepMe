@@ -44,42 +44,43 @@ class CompleteBeep extends StatelessWidget {
               /////////////////////////////
               ListView(
                 shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
                 children: [
-                  Expanded(
-                      child: Column(
+                  Column(
                     children: [
                       BeepComplete(),
                       BeepComplete(),
                       BeepComplete(),
+                      BeepComplete(),
+                      BeepComplete(),
+                      BeepComplete(),
                     ],
-                  ))
+                  )
                 ],
               ),
+              // Spacer(),
 
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: SizedBox(
-                    height: 48,
-                    width: 388,
-                    child: ElevatedButton(
-                        onPressed: () {
-                          Get.to(WithDrawScreen());
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: ColorConstants.primaryDarkColor,
-                          side: BorderSide(
-                              width: 1,
-                              color: ColorConstants
-                                  .primaryDarkColor), //border width and color
-                          elevation: 3, //elevation of button
-                          shape: RoundedRectangleBorder(
-                              //to set border radius to button
-                              borderRadius: BorderRadius.circular(10)),
-                        ),
-                        child: "WITHDRAW".text.white.size(16).make()),
-                  ),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: SizedBox(
+                  height: 48,
+                  width: 388,
+                  child: ElevatedButton(
+                      onPressed: () {
+                        Get.to(WithDrawScreen());
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: ColorConstants.primaryDarkColor,
+                        side: BorderSide(
+                            width: 1,
+                            color: ColorConstants
+                                .primaryDarkColor), //border width and color
+                        elevation: 3, //elevation of button
+                        shape: RoundedRectangleBorder(
+                            //to set border radius to button
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                      child: "WITHDRAW".text.white.size(16).make()),
                 ),
               )
             ]),

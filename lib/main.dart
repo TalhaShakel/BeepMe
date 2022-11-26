@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
             //home: const SplashScreen(),
             initialRoute: "/",
             routes: {
-              '/': (context) => const HomeScreen  (),
+              '/': (context) => const SplashScreen(),
               Routes.onBoardingScreen: (context) => const OnBoardingScreen(),
               Routes.loginWithScreen: (context) => const LoginWithScreen(),
               Routes.facebookLoginScreen: (context) =>

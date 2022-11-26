@@ -42,58 +42,61 @@ class ViewBeep extends StatelessWidget {
                 decoration: BoxDecoration(
                     border: Border.all(color: ColorConstants.primaryDarkColor),
                     borderRadius: BorderRadius.circular(10.r)),
-                child: FittedBox(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          controller.isActiveOffers(true);
-                        },
-                        child: Container(
-                          height: 48.h,
-                          width: 194.w,
-                          child: Card(
+                child: Wrap(
+                  // mainAxisAlignment: MainAxisAlignment.center,
+                  direction: Axis.vertical,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        controller.isActiveOffers(true);
+                      },
+                      child: Container(
+                        height: 48.h,
+                        width: Get.width / 2 - 21,
+                        decoration: BoxDecoration(
                             color: controller.isActive_Offers
                                 ? ColorConstants.primaryDarkColor
                                 : Vx.white,
-                            child: Center(
-                              child: "Active Offers"
-                                  .text
-                                  .color(controller.isActive_Offers
-                                      ? Vx.white
-                                      : ColorConstants.primaryDarkColor)
-                                  .size(14.sp)
-                                  .make(),
-                            ),
-                          ),
+                            border: Border.all(color: Colors.white),
+                            borderRadius: BorderRadius.circular(10.r)),
+                        child: Center(
+                          child: "Active Offers"
+                              .text
+                              .color(controller.isActive_Offers
+                                  ? Vx.white
+                                  : ColorConstants.primaryDarkColor)
+                              .size(14.sp)
+                              .make(),
                         ),
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          controller.isActiveOffers(false);
-                        },
-                        child: Container(
-                          height: 48.h,
-                          width: 194.w,
-                          child: Card(
-                              color: controller.isActive_Offers == false
-                                  ? ColorConstants.primaryDarkColor
-                                  : Vx.white,
-                              child: Center(
-                                child: "View Offer"
-                                    .text
-                                    .center
-                                    .color(controller.isActive_Offers == false
-                                        ? Vx.white
-                                        : ColorConstants.primaryDarkColor)
-                                    .size(14.sp)
-                                    .make(),
-                              )),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        controller.isActiveOffers(false);
+                      },
+                      child: Container(
+                        height: 48.h,
+                        width: Get.width / 2 - 21,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.white),
+                          borderRadius: BorderRadius.circular(10.r),
+                          color: controller.isActive_Offers == false
+                              ? ColorConstants.primaryDarkColor
+                              : Vx.white,
+                        ),
+                        child: Center(
+                          child: "View Offer"
+                              .text
+                              .center
+                              .color(controller.isActive_Offers == false
+                                  ? Vx.white
+                                  : ColorConstants.primaryDarkColor)
+                              .size(14.sp)
+                              .make(),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
               15.heightBox,
@@ -193,8 +196,7 @@ class ViewBeep extends StatelessWidget {
                   "Proof Task".text.make(),
                   10.widthBox,
                   GestureDetector(
-                    onTap: () {
-                    },
+                    onTap: () {},
                     child: Container(
                         height: 40,
                         width: 40,
@@ -218,7 +220,6 @@ class ViewBeep extends StatelessWidget {
       ),
     );
   }
-
 
   viewOffer() {
     return GestureDetector(

@@ -4,6 +4,7 @@ import 'package:beep_me/ui_utils/text_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class PaynoeerPayment extends StatelessWidget {
@@ -21,10 +22,12 @@ class PaynoeerPayment extends StatelessWidget {
         padding: const EdgeInsets.all(20.0),
         child: Column(
             // mainAxisAlignment: MainAxisAlignment.start
-            crossAxisAlignment: CrossAxisAlignment.start,
+            // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               20.heightBox,
-              "Enter amount".text.gray400.size(8).make(),
+              Align(
+                  alignment: Alignment.topLeft,
+                  child: "Enter amount".text.gray400.size(8).make()),
               8.heightBox,
               TextFormField(
                 decoration: InputDecoration(
@@ -54,20 +57,42 @@ class PaynoeerPayment extends StatelessWidget {
               ),
               100.heightBox,
               //////////////////////////
-              Container(
-                height: 48,
-                width: MediaQuery.of(context).size.width,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    primary: ColorConstants.primaryDarkColor,
-                    onPrimary: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12.0),
+              ///
+              Spacer(),
+              GestureDetector(
+                onTap: () {
+                  print("object");
+                  // Get.dialog(Container(
+                  //     height: 200,
+                  //     width: 100,
+                  //     color: Colors.white,
+                  //     child: Image.asset("assets/payment-method 1.png")));
+                  // showDialog(
+                  //   context: context,
+                  //   builder: (context) {
+                  //     return Container(
+                  //       height: 200,
+                  //       width: 100,
+                  //       color: Colors.white,
+                  //     );
+                  //   },
+                  // );
+                },
+                child: Container(
+                  height: 48,
+                  width: MediaQuery.of(context).size.width,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      primary: ColorConstants.primaryDarkColor,
+                      onPrimary: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12.0),
+                      ),
                     ),
+                    child: TextUtils.getText("TRANSFER", 16,
+                        AppConstants.robotoBoldFont, Colors.white),
                   ),
-                  child: TextUtils.getText("TRANSFER", 16,
-                      AppConstants.robotoBoldFont, Colors.white),
                 ),
               ),
             ]),

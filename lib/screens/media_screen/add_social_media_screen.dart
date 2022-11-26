@@ -6,6 +6,7 @@ import 'package:beep_me/ui_utils/image_files.dart';
 import 'package:beep_me/ui_utils/image_utils.dart';
 import 'package:beep_me/ui_utils/text_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../../constants/app_constants.dart';
@@ -37,7 +38,7 @@ class AddSocialMediaScreenState extends State<AddSocialMediaScreen> {
         appBar: AppBar(
           backgroundColor: ColorConstants.primaryDarkColor,
           centerTitle: true,
-          leading: ImageUtils.buildImage(ImageFiles.edtProfBackArrow, 24, 24),
+          // leading: ImageUtils.buildImage(ImageFiles.edtProfBackArrow, 24, 24),
           title: TextUtils.getText(StringConstants.strAddSocialMedia, 18,
               AppConstants.robotoBoldFont, Colors.white),
         ),
@@ -70,7 +71,7 @@ class AddSocialMediaScreenState extends State<AddSocialMediaScreen> {
                 ),
                 InputUtil.getInput(StringConstants.strInstLink),
                 SizedBox(
-                  height: 150,
+                  height: 100,
                 ),
                 Container(
                   margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -78,7 +79,8 @@ class AddSocialMediaScreenState extends State<AddSocialMediaScreen> {
                   width: MediaQuery.of(context).size.width,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, Routes.addSocialMediaScreen);
+                      Get.back();
+                      // Navigator.pushNamed(context, Routes.addSocialMediaScreen);
                     },
                     style: ElevatedButton.styleFrom(
                       primary: ColorConstants.primaryDarkColor,

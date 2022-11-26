@@ -50,7 +50,7 @@ class LoginWithScreenState extends State<LoginWithScreen> {
             ColorConstants.orangeShadeColor,
           ],
         )),
-        child: SingleChildScrollView(
+        child: FittedBox(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [

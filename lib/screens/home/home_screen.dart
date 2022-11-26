@@ -81,9 +81,8 @@ class HomeScreenState extends State<HomeScreen> {
                 ),
                 RoundedButton.roundedImageButton(ImageFiles.homeMsgWhiteIcn,
                     130, 65, 60, 60, ColorConstants.yellowColor, () {
-                  // Navigator.pushNamed(context, Routes.edtProfileScreen);
-                  Get.to(EditProfileScreen());
-                  // Get.to(() => ViewBeep());
+                  // Get.to(EditProfileScreen());
+                  Get.to(() => ViewBeep());
                 }),
                 const SizedBox(
                   height: 16,
