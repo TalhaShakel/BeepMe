@@ -35,7 +35,7 @@ class _MyProfileClientReviewsState extends State<MyProfileClientReviews> {
         appBar: AppBar(
           backgroundColor: ColorConstants.primaryDarkColor,
           centerTitle: true,
-          leading: ImageUtils.buildImage(ImageFiles.edtProfBackArrow, 24, 24),
+          // leading: ImageUtils.buildImage(ImageFiles.edtProfBackArrow, 24, 24),
           title: TextUtils.getText(
               "Client Reviews", 18, AppConstants.robotoBoldFont, Colors.white),
         ),
@@ -46,16 +46,8 @@ class _MyProfileClientReviewsState extends State<MyProfileClientReviews> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(
-                  height: 10,
-                ),
                 getTileContainer(),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 5),
-                  child: Divider(
-                    height: 1,
-                  ),
-                ),
+                getTileContainer(),
                 getTileContainer(),
               ],
             ),
@@ -65,9 +57,10 @@ class _MyProfileClientReviewsState extends State<MyProfileClientReviews> {
 
   Widget getTileContainer() {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 16),
+      // margin: EdgeInsets.symmetric(horizontal: 16),
       width: MediaQuery.of(context).size.width,
       height: 68,
+      color: Color(0xffFFFCF6),
       child: Stack(
         children: [
           // ImageUtils.buildImage(ImageFiles.srchProfOvalIcon, 136, 78),
@@ -77,7 +70,7 @@ class _MyProfileClientReviewsState extends State<MyProfileClientReviews> {
             title: TextUtils.getText(
                 StringConstants.strJohnDoe, 14, AppConstants.robotoBoldFont),
             subtitle: TextUtils.getText(
-                "United Kingdom", 10, AppConstants.robotoRegularFont),
+                "United Kingdom", 8, AppConstants.robotoRegularFont),
             trailing: Container(
               width: 60,
               child: Column(
@@ -87,7 +80,6 @@ class _MyProfileClientReviewsState extends State<MyProfileClientReviews> {
                   10.heightBox,
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
-                    // mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       TextUtils.getText(
                           StringConstants.strRating,
@@ -107,7 +99,7 @@ class _MyProfileClientReviewsState extends State<MyProfileClientReviews> {
                     children: [
                       TextUtils.getText(
                           "1 Month Ago",
-                          10,
+                          8,
                           AppConstants.poppinsRegularFont,
                           ColorConstants.grayRatingCountColor),
                     ],
@@ -115,7 +107,11 @@ class _MyProfileClientReviewsState extends State<MyProfileClientReviews> {
                 ],
               ),
             ),
-          )
+          ),
+          Divider(
+            indent: 70,
+            height: 1,
+          ),
         ],
       ),
     );

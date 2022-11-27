@@ -31,8 +31,17 @@ class InviteFriend extends StatelessWidget {
               width: 98,
               height: 40,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                  color: ColorConstants.primaryDarkColor),
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+                color: ColorConstants.primaryDarkColor,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.3),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
+              ),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(children: [
@@ -56,8 +65,17 @@ class InviteFriend extends StatelessWidget {
                 width: 98,
                 height: 40,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                    color: Color(0xffFFF0D5)),
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                  color: Color(0xffFFF0D5),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.3),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: Offset(0, 3), // changes position of shadow
+                    ),
+                  ],
+                ),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(children: [

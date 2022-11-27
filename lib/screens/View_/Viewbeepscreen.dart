@@ -27,7 +27,6 @@ class ViewBeep extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: ColorConstants.primaryDarkColor,
         centerTitle: true,
-        leading: ImageUtils.buildImage(ImageFiles.edtProfBackArrow, 24, 24),
         title: TextUtils.getText(StringConstants.strViewBeep, 18,
             AppConstants.robotoRegularFont, Colors.white),
       ),
@@ -196,7 +195,9 @@ class ViewBeep extends StatelessWidget {
                   "Proof Task".text.make(),
                   10.widthBox,
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(ViewProve());
+                    },
                     child: Container(
                         height: 40,
                         width: 40,

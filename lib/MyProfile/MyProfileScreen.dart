@@ -4,6 +4,7 @@ import 'package:beep_me/constants/app_constants.dart';
 import 'package:beep_me/constants/color_constants.dart';
 import 'package:beep_me/constants/route_names.dart';
 import 'package:beep_me/constants/string_constants.dart';
+import 'package:beep_me/screens/home/home_screen.dart';
 import 'package:beep_me/ui_utils/image_files.dart';
 import 'package:beep_me/ui_utils/image_utils.dart';
 import 'package:beep_me/ui_utils/text_utils.dart';
@@ -33,21 +34,52 @@ class MyProfileScreen extends StatelessWidget {
               height: 130,
               color: ColorConstants.primaryDarkColor,
               child: ListTile(
-                trailing: "Log Out".text.white.bold.make(),
-                leading:
-                    ImageUtils.buildImage(ImageFiles.edtProfBackArrow, 24, 24),
-                title: TextUtils.getText(StringConstants.strJohnDoe, 14,
-                    AppConstants.robotoRegularFont, Colors.white),
+                trailing: Padding(
+                    padding: const EdgeInsets.only(right: 10.0),
+                    child: Text(
+                      "Log Out",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 18,
+                          color: Colors.white,
+                          shadows: [
+                            Shadow(
+                                color: Colors.black.withOpacity(0.3),
+                                offset: const Offset(0, 4),
+                                blurRadius: 1),
+                          ]),
+                    )),
+                leading: GestureDetector(
+                    onTap: () {
+                      Get.back();
+                    },
+                    child: ImageUtils.buildImage(
+                        ImageFiles.edtProfBackArrow, 24, 24)),
+                title: TextUtils.getText(
+                    StringConstants.strJohnDoe,
+                    16,
+                    AppConstants.robotoRegularFont,
+                    Colors.white,
+                    TextAlign.start,
+                    FontWeight.w700),
                 subtitle: Align(
                   alignment: Alignment.topLeft,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      TextUtils.getText(StringConstants.strPersonalBal, 10,
-                          AppConstants.robotoRegularFont, Colors.white),
+                      10.heightBox,
+                      TextUtils.getText(
+                          StringConstants.strTotApproved,
+                          14,
+                          AppConstants.robotoRegularFont,
+                          Colors.white,
+                          TextAlign.start,
+                          FontWeight.w500),
+                      10.heightBox,
                       Row(
                         children: [
-                          "4.9".text.white.make(),
+                          "4.9".text.size(14).white.make(),
+                          10.widthBox,
                           Icon(
                             Icons.star,
                             color: Vx.white,
@@ -147,7 +179,7 @@ class MyProfileScreen extends StatelessWidget {
                       children: [
                         SizedBox(
                           height: 50,
-                          width: 140,
+                          width: Get.width / 100 + 160,
                           child: ElevatedButton(
                             onPressed: () {
                               Navigator.push(
@@ -155,7 +187,11 @@ class MyProfileScreen extends StatelessWidget {
                                   MaterialPageRoute(
                                       builder: (_) => MyProfileEditScreen()));
                             },
-                            child: Text("EDIT PROFILE"),
+                            child: Text(
+                              "EDIT PROFILE",
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w700),
+                            ),
                             style: ElevatedButton.styleFrom(
                               primary: Colors.red,
                               shape: RoundedRectangleBorder(
@@ -164,7 +200,7 @@ class MyProfileScreen extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          width: 160,
+                          width: Get.width / 100 + 160,
                           height: 48,
                           decoration: BoxDecoration(
                               border: Border.all(color: Colors.red),
@@ -177,7 +213,8 @@ class MyProfileScreen extends StatelessWidget {
                                 "REVIEWS",
                                 style: TextStyle(
                                     color: Colors.red,
-                                    fontWeight: FontWeight.w500),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w700),
                               ),
                             ),
                             Padding(
@@ -205,10 +242,20 @@ class MyProfileScreen extends StatelessWidget {
                         ),
                       ],
                     ),
+                    20.heightBox,
+                    Center(
+                        child: GestureDetector(
+                      onTap: () {
+                        Get.to(MyProfileEditScreen());
+                      },
+                      child: "View terms of use"
+                          .text
+                          .size(12)
+                          .fontWeight(FontWeight.w400)
+                          .make(),
+                    )),
                     /////////////////////////////////////////
-                    SizedBox(
-                      height: 16,
-                    ),
+                    20.heightBox,
                   ],
                 ),
               ),
@@ -288,7 +335,7 @@ class MyProfileScreen extends StatelessWidget {
                 ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );

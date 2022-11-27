@@ -27,11 +27,12 @@ class ViewOfferDetailsScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Container(
-            height: 450,
+            height: 440,
+            width: Get.width,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(10)),
                 border: Border.all(
-                  color: Colors.red,
+                  color: ColorConstants.primaryDarkColor,
                   width: 1,
                 )),
             child: Column(children: [
@@ -56,9 +57,13 @@ class ViewOfferDetailsScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(20.0),
                 child: Row(
                   children: [
-                    Text("Duration"),
+                    "Duration"
+                        .text
+                        .size(16)
+                        .color(ColorConstants.agreeWithTermsTextColor)
+                        .make(),
                     85.widthBox,
-                    "4 Days".text.bold.make(),
+                    "\t4 Days".text.size(16).fontWeight(FontWeight.w400).make(),
                   ],
                 ),
               ),
@@ -66,9 +71,13 @@ class ViewOfferDetailsScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(20.0),
                 child: Row(
                   children: [
-                    Text("Earnings per Beep"),
+                    "Earnings per Beep"
+                        .text
+                        .size(16)
+                        .color(ColorConstants.agreeWithTermsTextColor)
+                        .make(),
                     25.widthBox,
-                    "100".text.bold.make(),
+                    "100".text.fontWeight(FontWeight.w400).size(16).make(),
                   ],
                 ),
               ),
@@ -76,63 +85,93 @@ class ViewOfferDetailsScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(20.0),
                 child: Row(
                   children: [
-                    Text("Total you will earn"),
+                    "Total you will earn"
+                        .text
+                        .size(16)
+                        .color(ColorConstants.agreeWithTermsTextColor)
+                        .make(),
                     25.widthBox,
-                    "\$456".text.bold.make(),
+                    "\$456".text.fontWeight(FontWeight.w400).size(16).make(),
                   ],
                 ),
               ),
               Container(
                 margin: EdgeInsets.only(right: 165, top: 10),
-                width: 130,
-                height: 40,
+                width: 124,
+                height: 29,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                     border: Border.all(
-                      color: Colors.red,
+                      color: ColorConstants.primaryDarkColor,
                       width: 1,
                     )),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: "Photo 5M",
-                      prefixIcon: IconButton(
-                        icon: Icon(
-                          Icons.attach_file,
-                          color: Colors.red,
-                        ),
-                        onPressed: () {},
-                      )),
-                ),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Icon(
+                        Icons.attach_file,
+                        size: 20,
+                        color: ColorConstants.primaryDarkColor,
+                      ),
+                      "Photo".text.size(14).color(Color(0xff858585)).make(),
+                      "5M".text.make(),
+                    ]),
+                // child: TextFormField(
+                //   decoration: InputDecoration(
+                //       border: InputBorder.none,
+                //       hintText: "Photo",
+                //       hintStyle: TextStyle(
+                //         color: ColorConstants.agreeWithTermsTextColor,
+                //       ),
+                //       suffixIcon: "5M".text.color(Color(0xff858585)).make(),
+                //       prefixIcon: IconButton(
+                //         icon: Icon(
+                //           Icons.attach_file,
+                //           color: ColorConstants.primaryDarkColor,
+                //         ),
+                //         onPressed: () {},
+                //       )),
+                // ),
               ),
               75.heightBox,
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   SizedBox(
-                    height: 50,
-                    width: 120,
+                    height: 48,
+                    width: 144,
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: Text("ACCEPT"),
+                      child: "ACCEPT"
+                          .text
+                          .white
+                          .fontWeight(FontWeight.w700)
+                          .make(),
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.red,
+                        primary: ColorConstants.primaryDarkColor,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                       ),
                     ),
                   ),
                   SizedBox(
-                    height: 50,
-                    width: 120,
+                    height: 48,
+                    width: 144,
                     child: ElevatedButton(
                       onPressed: () {
                         Get.bottomSheet(bottomNavbarDrawer());
                       },
-                      child: "REJECT".text.red500.make(),
+                      child: "REJECT"
+                          .text
+                          .color(ColorConstants.primaryDarkColor)
+                          .fontWeight(FontWeight.w700)
+                          .make(),
                       style: ElevatedButton.styleFrom(
                         primary: Colors.white,
-                        side: BorderSide(width: 1, color: Colors.red),
+                        side: BorderSide(
+                          width: 1,
+                          color: ColorConstants.primaryDarkColor,
+                        ),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                       ),
@@ -159,8 +198,17 @@ class bottomNavbarDrawer extends StatelessWidget {
     return Container(
       height: 248,
       decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.all(Radius.circular(10))),
+        color: Colors.white,
+        borderRadius: BorderRadius.all(Radius.circular(10)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 5,
+            blurRadius: 7,
+            offset: Offset(0, 3), // changes position of shadow
+          ),
+        ],
+      ),
       child: Padding(
         padding: const EdgeInsets.only(top: 30, right: 20, left: 20),
         child: Column(children: [
@@ -202,12 +250,17 @@ class bottomNavbarDrawer extends StatelessWidget {
             width: 129,
             child: ElevatedButton(
               onPressed: () {},
-              child:
-                  "Don't Have Time".text.bold.red500.underline.size(16).make(),
+              child: "Don't Have Time".text.bold.red500.size(16).make(),
               style:
                   ElevatedButton.styleFrom(primary: Colors.white, elevation: 0),
             ),
           ),
+          Center(
+              child: Container(
+            height: 1,
+            width: 93,
+            color: ColorConstants.primaryDarkColor,
+          )),
         ]),
       ),
     );

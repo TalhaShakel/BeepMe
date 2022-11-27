@@ -49,6 +49,7 @@ class ViewProve extends StatelessWidget {
                 ],
               ),
             ),
+            ////////////////////////////////////
             Padding(
               padding:
                   const EdgeInsets.symmetric(vertical: 28.0, horizontal: 20),
@@ -71,22 +72,32 @@ class ViewProve extends StatelessWidget {
                         Positioned(
                           right: 0,
                           child: GestureDetector(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.white, shape: BoxShape.circle),
-                              child: Padding(
-                                padding: const EdgeInsets.all(3.0),
-                                child: Icon(
-                                  Icons.download,
-                                  size: 15,
+                            child: Padding(
+                              padding: const EdgeInsets.all(3.0),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    shape: BoxShape.circle),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(3.0),
+                                  child: Icon(
+                                    Icons.download,
+                                    size: 15,
+                                  ),
                                 ),
                               ),
                             ),
                           ),
                         ),
+                        Positioned(
+                            bottom: 0,
+                            right: 0,
+                            child: Padding(
+                              padding: const EdgeInsets.all(6.0),
+                              child: "11:32 AM".text.size(8).white.make(),
+                            )),
                       ],
                     ),
-                    Text("11:32 AM"),
                   ],
                 ),
               ),
@@ -113,26 +124,37 @@ class ViewProve extends StatelessWidget {
                         Positioned(
                           right: 0,
                           child: GestureDetector(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.white, shape: BoxShape.circle),
-                              child: Padding(
-                                padding: const EdgeInsets.all(3.0),
-                                child: Icon(
-                                  Icons.download,
-                                  size: 15,
+                            child: Padding(
+                              padding: const EdgeInsets.all(3.0),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    shape: BoxShape.circle),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(3.0),
+                                  child: Icon(
+                                    Icons.download,
+                                    size: 15,
+                                  ),
                                 ),
                               ),
                             ),
                           ),
                         ),
+                        Positioned(
+                            bottom: 0,
+                            right: 0,
+                            child: Padding(
+                              padding: const EdgeInsets.all(6.0),
+                              child: "11:32 AM".text.size(8).white.make(),
+                            )),
                       ],
                     ),
-                    Text("11:32 AM"),
                   ],
                 ),
               ),
             ),
+            //////////////////////////////////////
           ],
         ),
       ),

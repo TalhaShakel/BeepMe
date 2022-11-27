@@ -28,12 +28,12 @@ class ManageBeepScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: ColorConstants.primaryDarkColor,
         centerTitle: true,
-        leading: ImageUtils.buildImage(ImageFiles.edtProfBackArrow, 24, 24),
+        // leading: ImageUtils.buildImage(ImageFiles.edtProfBackArrow, 24, 24),
         title: TextUtils.getText(
             "Manage Beeps", 18, AppConstants.robotoRegularFont, Colors.white),
       ),
       body: Padding(
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
         child: GetBuilder<MainController>(builder: (controller) {
           return Column(
             children: [
@@ -120,90 +120,147 @@ class ManageBeepScreen extends StatelessWidget {
       decoration: BoxDecoration(
           border: Border.all(color: ColorConstants.primaryDarkColor),
           borderRadius: BorderRadius.circular(12.r)),
-      child: Padding(
-        padding: const EdgeInsets.only(top: 8.0),
-        child: Stack(
-          children: [
-            Image.asset(
-              ImageFiles.srchProfOvalIcon,
-              height: 1000,
-              width: 220,
+      child: Stack(
+        children: [
+          Container(
+            height: 135,
+            width: Get.width / 100 + 160,
+            decoration: BoxDecoration(
+              color: Color(0xffFFE6B7).withOpacity(0.3),
+              borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(60.0),
+                  bottomLeft: Radius.circular(60.0)),
             ),
-            ListTile(
-              title: "\$200".text.make(),
-              subtitle: "Shoes advertisement".text.size(8).make(),
-              leading: Image.asset("assets/Rectangle 127.png"),
-              // trailing:
-            ),
-            Positioned(
-              right: 10,
-              top: 6,
-              child: Container(
-                height: 20,
-                width: 80,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(3)),
-                  color: Color(0xFFFFF7E9),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 5,
-                      blurRadius: 7,
-                      offset: Offset(0, 3), // changes position of shadow
-                    ),
-                  ],
-                ),
-                child: Center(
-                  child: Text(
-                    "COMPLETED",
-                    style: TextStyle(color: Colors.red, fontSize: 10),
+          ),
+          ListTile(
+            title: "\$200".text.fontWeight(FontWeight.w500).size(16).make(),
+            subtitle: "Shoes advertisement".text.size(12).make(),
+            leading: Image.asset("assets/Rectangle 127.png"),
+            // trailing:
+          ),
+          Positioned(
+            right: 10,
+            top: 10,
+            child: Container(
+              height: 20,
+              width: 80,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(3)),
+                color: Color(0xFFFFF7E9),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.9),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3), // changes position of shadow
                   ),
+                ],
+              ),
+              child: Center(
+                child: Text(
+                  "COMPLETED",
+                  style: TextStyle(
+                      color: ColorConstants.primaryDarkColor,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 10),
                 ),
               ),
             ),
-            Positioned(
-              bottom: 0,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("02/12/2022"),
-                    100.widthBox,
-                    Text("Duration    20 Days"),
-                  ],
-                ),
+          ),
+          Positioned(
+            bottom: 0,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("02/12/2022"),
+                  100.widthBox,
+                  Text("Duration    20 Days"),
+                ],
               ),
-            )
-          ],
-        ),
+            ),
+          )
+        ],
       ),
     );
   }
 
   Container viewoffer() {
     return Container(
-      height: 145.h,
+      height: 170.h,
       width: 388.w,
       decoration: BoxDecoration(
           border: Border.all(color: ColorConstants.primaryDarkColor),
           borderRadius: BorderRadius.circular(12.r)),
       child: Padding(
-        padding: const EdgeInsets.only(top: 8.0),
+        padding: const EdgeInsets.only(top: 6.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            ListTile(
-              title: "\$200".text.make(),
-              subtitle: "Shoes advertisement".text.make(),
-              leading: Image.asset("assets/Rectangle 127.png"),
-              trailing: Card(
-                  color: Vx.hexToColor("#FFF7E9"),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: "Active".text.make(),
-                  )),
-            ),
+            Stack(children: [
+              Container(
+                width: Get.width / 100 + 160,
+                decoration: BoxDecoration(
+                  color: Color(0xffFFE6B7).withOpacity(0.3),
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(60.0),
+                      bottomLeft: Radius.circular(60.0)),
+                ),
+              ),
+              ListTile(
+                title: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    "\$200".text.size(16).fontWeight(FontWeight.w500).make(),
+                    5.heightBox,
+                    "Shoes advertisement".text.size(12.sp).make(),
+                    5.heightBox,
+                    "02/12/2022"
+                        .text
+                        .size(8.sp)
+                        .color(Color(0xff7B7B7B))
+                        .make(),
+                    5.heightBox,
+                    "20 Days".text.size(8.sp).color(Color(0xff7B7B7B)).make(),
+                  ],
+                ),
+                // subtitle: "Shoes advertisement".text.size(12.sp).make(),
+                leading: Image.asset("assets/Rectangle 127.png"),
+              ),
+              Positioned(
+                right: 0,
+                top: 8,
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 8.0),
+                  child: Container(
+                    height: 20,
+                    width: 80,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(3)),
+                      color: Color(0xFFFFF7E9),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 3,
+                          blurRadius: 10,
+                          offset: Offset(0, 4), // changes position of shadow
+                        ),
+                      ],
+                    ),
+                    child: Center(
+                      child: Text(
+                        "ACTIVE",
+                        style: TextStyle(
+                            color: ColorConstants.primaryDarkColor,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 10),
+                      ),
+                    ),
+                  ),
+                ),
+              )
+            ]),
             Padding(
               padding: const EdgeInsets.all(14.0),
               child: Row(
@@ -266,7 +323,7 @@ class ManageBeepScreen extends StatelessWidget {
                     ],
                   ),
                   Spacer(),
-                  "Proof Task".text.make(),
+                  "Proof Task".text.size(18).fontWeight(FontWeight.w500).make(),
                   10.widthBox,
                   GestureDetector(
                     onTap: () {

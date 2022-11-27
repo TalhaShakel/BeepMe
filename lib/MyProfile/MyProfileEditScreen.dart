@@ -38,7 +38,7 @@ class _MyProfileEditScreenState extends State<MyProfileEditScreen> {
         appBar: AppBar(
           backgroundColor: ColorConstants.primaryDarkColor,
           centerTitle: true,
-          leading: ImageUtils.buildImage(ImageFiles.edtProfBackArrow, 24, 24),
+          // leading: ImageUtils.buildImage(ImageFiles.edtProfBackArrow, 24, 24),
           title: TextUtils.getText(StringConstants.strEditProfile, 18,
               AppConstants.robotoRegularFont, Colors.white),
         ),

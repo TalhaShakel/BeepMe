@@ -6,6 +6,7 @@ import 'package:beep_me/ui_utils/image_files.dart';
 import 'package:beep_me/ui_utils/image_utils.dart';
 import 'package:beep_me/ui_utils/text_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../screens/facebook_login/widgets/input_util.dart';
 
@@ -35,7 +36,7 @@ class _MyProfileSocialMediaState extends State<MyProfileSocialMedia> {
         appBar: AppBar(
           backgroundColor: ColorConstants.primaryDarkColor,
           centerTitle: true,
-          leading: ImageUtils.buildImage(ImageFiles.edtProfBackArrow, 24, 24),
+          // leading: ImageUtils.buildImage(ImageFiles.edtProfBackArrow, 24, 24),
           title: TextUtils.getText(StringConstants.strAddSocialMedia, 18,
               AppConstants.robotoBoldFont, Colors.white),
         ),
@@ -47,7 +48,7 @@ class _MyProfileSocialMediaState extends State<MyProfileSocialMedia> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: 70,
+                  height: 50,
                 ),
                 TextUtils.getText(StringConstants.splashScreenTitle, 28,
                     AppConstants.brunoAceRegularFont),
@@ -68,7 +69,7 @@ class _MyProfileSocialMediaState extends State<MyProfileSocialMedia> {
                 ),
                 InputUtil.getInput(StringConstants.strInstLink),
                 SizedBox(
-                  height: 100,
+                  height: Get.height / 100 + 90,
                 ),
                 Container(
                   margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -90,7 +91,7 @@ class _MyProfileSocialMediaState extends State<MyProfileSocialMedia> {
                   ),
                 ),
                 SizedBox(
-                  height: 100,
+                  height: 70,
                 ),
               ],
             ),
