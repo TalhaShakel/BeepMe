@@ -19,7 +19,7 @@ class PayPal_Payment_screen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: ColorConstants.primaryDarkColor,
         centerTitle: true,
-        leading: ImageUtils.buildImage(ImageFiles.edtProfBackArrow, 24, 24),
+        // leading: ImageUtils.buildImage(ImageFiles.edtProfBackArrow, 24, 24),
         title: TextUtils.getText(StringConstants.strPayWithPayPalCard, 18,
             AppConstants.robotoBoldFont, Colors.white),
       ),
@@ -49,7 +49,7 @@ class PayPal_Payment_screen extends StatelessWidget {
             StringConstants.strDescription,
           ),
           const SizedBox(
-            height: 24,
+            height: 50,
           ),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 20),

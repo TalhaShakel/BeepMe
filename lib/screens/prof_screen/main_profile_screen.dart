@@ -7,6 +7,7 @@ import 'package:beep_me/ui_utils/image_files.dart';
 import 'package:beep_me/ui_utils/image_utils.dart';
 import 'package:beep_me/ui_utils/text_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../constants/app_constants.dart';
 import '../../constants/route_names.dart';
@@ -50,8 +51,13 @@ class MainProfileScreenState extends State<MainProfileScreen> {
                   width: 86,
                   child: Row(
                     children: [
-                      ImageUtils.buildImage(
-                          ImageFiles.edtProfBackArrow, 24, 24),
+                      GestureDetector(
+                        onTap: () {
+                          Get.back();
+                        },
+                        child: ImageUtils.buildImage(
+                            ImageFiles.edtProfBackArrow, 24, 24),
+                      ),
                       const SizedBox(
                         width: 16,
                       ),
@@ -152,7 +158,8 @@ class MainProfileScreenState extends State<MainProfileScreen> {
                       width: MediaQuery.of(context).size.width,
                       child: ElevatedButton(
                         onPressed: () {
-                           Navigator.pushNamed(context, Routes.paymentMethodSelectionScreen);
+                          Navigator.pushNamed(
+                              context, Routes.paymentMethodSelectionScreen);
                         },
                         style: ElevatedButton.styleFrom(
                           primary: ColorConstants.primaryDarkColor,

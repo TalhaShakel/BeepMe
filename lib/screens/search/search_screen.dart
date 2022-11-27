@@ -19,7 +19,6 @@ class SearchScreen extends StatefulWidget {
 }
 
 class SearchScreenState extends State<SearchScreen> {
-
   @override
   void initState() {
     super.initState();
@@ -38,10 +37,10 @@ class SearchScreenState extends State<SearchScreen> {
         appBar: AppBar(
           backgroundColor: ColorConstants.primaryDarkColor,
           centerTitle: true,
-          leading: ImageUtils.buildImage(
-              ImageFiles.edtProfBackArrow, 24, 24),
-          title: TextUtils.getText(
-              StringConstants.strSearch, 18, AppConstants.robotoBoldFont, Colors.white),
+          // leading: ImageUtils.buildImage(
+          //     ImageFiles.edtProfBackArrow, 24, 24),
+          title: TextUtils.getText(StringConstants.strSearch, 18,
+              AppConstants.robotoBoldFont, Colors.white),
         ),
         body: Container(
           height: MediaQuery.of(context).size.height,
@@ -50,59 +49,55 @@ class SearchScreenState extends State<SearchScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-
-                const SizedBox(height: 16,),
+                const SizedBox(
+                  height: 16,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-
-                    const SizedBox(width: 16,),
-                   Expanded(
-                     child:  Container(
-                       width: MediaQuery.of(context).size.width,
-                       child: InputUtil.getInputWithRedCorner("Location",),
-                     ),
-                   ),
-
+                    const SizedBox(
+                      width: 16,
+                    ),
+                    Expanded(
+                      child: Container(
+                        width: MediaQuery.of(context).size.width,
+                        child: InputUtil.getInputWithRedCorner(
+                          "Location",
+                        ),
+                      ),
+                    ),
                     Container(
                       margin: const EdgeInsets.only(left: 16, right: 16),
                       height: 48,
                       width: 94,
                       child: ElevatedButton(
-                        onPressed: (){
-                          Navigator.pushNamed(context, Routes.searchedProfScreen);
+                        onPressed: () {
+                          Navigator.pushNamed(
+                              context, Routes.searchedProfScreen);
                         },
-
-                        style:ElevatedButton.styleFrom(
+                        style: ElevatedButton.styleFrom(
                           primary: ColorConstants.primaryDarkColor,
                           onPrimary: Colors.white,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                         ),
-                        child:  TextUtils.getText(
-                            StringConstants.strSearch, 16, AppConstants.robotoBoldFont, Colors.white),
+                        child: TextUtils.getText(StringConstants.strSearch, 16,
+                            AppConstants.robotoBoldFont, Colors.white),
                       ),
                     ),
-
-
                   ],
                 ),
-
-                const SizedBox(height: 32,),
+                const SizedBox(
+                  height: 32,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-
-
                     Padding(
                       padding: const EdgeInsets.only(left: 16),
-                      child:  TextUtils.getText(
-                          StringConstants.strAge,
-                          16
-                      ),
+                      child: TextUtils.getText(StringConstants.strAge, 16),
                     ),
-
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 8),
                       margin: const EdgeInsets.only(left: 16, right: 16),
@@ -112,113 +107,80 @@ class SearchScreenState extends State<SearchScreen> {
                           border: Border.all(
                             color: ColorConstants.primaryDarkColor,
                           ),
-                          borderRadius: const BorderRadius.all(Radius.circular(8))
-                      ),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(8))),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-
                           TextUtils.getText(
                               "10 - 15",
                               16,
                               AppConstants.robotoRegularFont,
-                              ColorConstants.txtGrayColor
-                          ),
-
+                              ColorConstants.txtGrayColor),
                           const Icon(
-                            Icons.arrow_forward_ios_rounded, color: Colors.black, size: 16,
+                            Icons.arrow_forward_ios_rounded,
+                            color: Colors.black,
+                            size: 16,
                           )
-
                         ],
                       ),
                     ),
-
-
                   ],
                 ),
-
-                const SizedBox(height: 24,),
+                const SizedBox(
+                  height: 24,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-
-
                     Padding(
                       padding: const EdgeInsets.only(left: 16),
-                      child:  TextUtils.getText(
-                          StringConstants.strGender,
-                          16
-                      ),
+                      child: TextUtils.getText(StringConstants.strGender, 16),
                     ),
-
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-
                         CircleAvatar(
                           radius: 6,
                           backgroundColor: ColorConstants.primaryDarkColor,
                         ),
-
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 8),
-                          child: TextUtils.getText(
-                              StringConstants.strMale,
-                              14
-                          ),
+                          child: TextUtils.getText(StringConstants.strMale, 14),
                         ),
-
                         getRoundCorneredCircle(),
-
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 8),
-                          child: TextUtils.getText(
-                              StringConstants.strFemale,
-                              14
-                          ),
+                          child:
+                              TextUtils.getText(StringConstants.strFemale, 14),
                         ),
-
-
                         getRoundCorneredCircle(),
-
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 8),
-                          child: TextUtils.getText(
-                              StringConstants.strOther,
-                              14
-                          ),
+                          child:
+                              TextUtils.getText(StringConstants.strOther, 14),
                         ),
-
                         getRoundCorneredCircle(),
-
                         Padding(
                           padding: const EdgeInsets.only(left: 8, right: 16),
-                          child: TextUtils.getText(
-                              StringConstants.strAll,
-                              14
-                          ),
+                          child: TextUtils.getText(StringConstants.strAll, 14),
                         ),
-
                       ],
                     )
                   ],
                 ),
-
-                const SizedBox(height: 32,),
+                const SizedBox(
+                  height: 32,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-
-
                     Padding(
                       padding: const EdgeInsets.only(left: 16),
-                      child:  TextUtils.getText(
-                          StringConstants.strInterests,
-                          16
-                      ),
+                      child:
+                          TextUtils.getText(StringConstants.strInterests, 16),
                     ),
-
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 6),
                       margin: const EdgeInsets.only(left: 16, right: 16),
@@ -228,13 +190,12 @@ class SearchScreenState extends State<SearchScreen> {
                           border: Border.all(
                             color: ColorConstants.primaryDarkColor,
                           ),
-                          borderRadius: const BorderRadius.all(Radius.circular(8))
-                      ),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(8))),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: const [
-
                           // TextUtils.getText(
                           //     StringConstants.strTraveling,
                           //     16,
@@ -245,63 +206,46 @@ class SearchScreenState extends State<SearchScreen> {
                           Expanded(
                             child: DropDownItemsWidget(),
                           ),
-
                         ],
                       ),
                     ),
                   ],
                 ),
-
-
-                const SizedBox(height: 40,),
+                const SizedBox(
+                  height: 40,
+                ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: ImageUtils.buildImage(
-                      ImageFiles.searchMapImg,
-                      MediaQuery.of(context).size.width, 400
-                  ),
+                  child: ImageUtils.buildImage(ImageFiles.searchMapImg,
+                      MediaQuery.of(context).size.width, 400),
                 )
-
-
-
               ],
             ),
           ),
-        )
-    );
+        ));
   }
 
-
-
-
-
-
-  Widget getSearchContainer(double _width, double _height){
-    return  Container(
+  Widget getSearchContainer(double _width, double _height) {
+    return Container(
       width: _width,
       height: _height,
       decoration: BoxDecoration(
           border: Border.all(
             color: ColorConstants.primaryDarkColor,
           ),
-          borderRadius: const BorderRadius.all(Radius.circular(10))
-      ),
+          borderRadius: const BorderRadius.all(Radius.circular(10))),
     );
   }
 
-
-  Widget getRoundCorneredCircle(){
-    return  Container(
+  Widget getRoundCorneredCircle() {
+    return Container(
       width: 13,
       height: 13,
       decoration: BoxDecoration(
           border: Border.all(
             color: ColorConstants.primaryDarkColor,
           ),
-          borderRadius: const BorderRadius.all(Radius.circular(50))
-      ),
+          borderRadius: const BorderRadius.all(Radius.circular(50))),
     );
   }
-
-
 }

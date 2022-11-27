@@ -64,17 +64,13 @@ class _WithDrawPaymentScreenState extends State<WithDrawPaymentScreen> {
             ),
             getCardSelectionTile(false, ImageFiles.pMethSelectionGpay,
                 StringConstants.strGooglePay),
-            SizedBox(
-              height: 24,
-            ),
+            
+            
             // getRoundCorneredCircle(),
-            SizedBox(
-              height: 16,
-            ),
+            
             SizedBox(
               height: 100,
             ),
-            Spacer(),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 20),
               height: 48,

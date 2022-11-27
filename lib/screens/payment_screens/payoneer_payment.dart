@@ -27,7 +27,7 @@ class _PayoneerPaymentState extends State<PayoneerPayment> {
         appBar: AppBar(
           backgroundColor: ColorConstants.primaryDarkColor,
           centerTitle: true,
-          leading: ImageUtils.buildImage(ImageFiles.edtProfBackArrow, 24, 24),
+          // leading: ImageUtils.buildImage(ImageFiles.edtProfBackArrow, 24, 24),
           title: TextUtils.getText(StringConstants.stPayWithPayoneereCard, 18,
               AppConstants.robotoBoldFont, Colors.white),
         ),
@@ -72,7 +72,7 @@ class _PayoneerPaymentState extends State<PayoneerPayment> {
                     StringConstants.strDueBy,
                   ),
                   const SizedBox(
-                    height: 100,
+                    height: 50,
                   ),
                   Container(
                     margin: const EdgeInsets.symmetric(horizontal: 20),

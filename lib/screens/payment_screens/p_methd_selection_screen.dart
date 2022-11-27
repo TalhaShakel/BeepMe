@@ -34,12 +34,12 @@ class PaymentMethodSelectionScreenState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: true,
+      // resizeToAvoidBottomInset: true,
       backgroundColor: ColorConstants.whiteColor,
       appBar: AppBar(
         backgroundColor: ColorConstants.primaryDarkColor,
         centerTitle: true,
-        leading: ImageUtils.buildImage(ImageFiles.edtProfBackArrow, 24, 24),
+        // leading: ImageUtils.buildImage(ImageFiles.edtProfBackArrow, 24, 24),
         title: TextUtils.getText(StringConstants.strAddPaymentMethod, 18,
             AppConstants.robotoBoldFont, Colors.white),
       ),
@@ -51,7 +51,7 @@ class PaymentMethodSelectionScreenState
           // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(
-              height: 40,
+              height: 30,
             ),
             getCardSelectionTile(true, ImageFiles.pMethSelectionMaster,
                 StringConstants.strMasterCard),
@@ -90,7 +90,6 @@ class PaymentMethodSelectionScreenState
             SizedBox(
               height: 20,
             ),
-            Spacer(),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 20),
               height: 48,
