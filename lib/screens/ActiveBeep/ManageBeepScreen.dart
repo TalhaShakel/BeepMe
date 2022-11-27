@@ -149,7 +149,7 @@ class ManageBeepScreen extends StatelessWidget {
                 color: Color(0xFFFFF7E9),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.9),
+                    color: Colors.grey.withOpacity(0.3),
                     spreadRadius: 5,
                     blurRadius: 7,
                     offset: Offset(0, 3), // changes position of shadow
@@ -241,7 +241,7 @@ class ManageBeepScreen extends StatelessWidget {
                       color: Color(0xFFFFF7E9),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
+                          color: Colors.grey.withOpacity(0.3),
                           spreadRadius: 3,
                           blurRadius: 10,
                           offset: Offset(0, 4), // changes position of shadow
