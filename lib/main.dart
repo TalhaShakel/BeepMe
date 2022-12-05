@@ -21,6 +21,7 @@ import 'package:beep_me/screens/prof_screen/searched_prof_screen.dart';
 import 'package:beep_me/screens/search/search_screen.dart';
 import 'package:beep_me/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
         splitScreenMode: true,
         builder: (context, child) {
           return GetMaterialApp(
+            builder: EasyLoading.init(),
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
               primaryColor: ColorConstants.primaryDarkColor,

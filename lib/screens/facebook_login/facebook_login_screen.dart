@@ -1,3 +1,4 @@
+import 'package:beep_me/Service%20and%20models/Service.dart';
 import 'package:beep_me/constants/color_constants.dart';
 import 'package:beep_me/constants/string_constants.dart';
 import 'package:beep_me/screens/facebook_login/widgets/input_util.dart';
@@ -18,6 +19,9 @@ class FacebookLoginScreen extends StatefulWidget {
 }
 
 class FacebookLoginScreenState extends State<FacebookLoginScreen> {
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
+
   @override
   void initState() {
     super.initState();
@@ -102,11 +106,11 @@ class FacebookLoginScreenState extends State<FacebookLoginScreen> {
               const SizedBox(
                 height: 40,
               ),
-              InputUtil.getInput(StringConstants.strPhnOrEmail),
+              InputUtil.getInput(StringConstants.strPhnOrEmail, 20, email),
               const SizedBox(
                 height: 12,
               ),
-              InputUtil.getInput(StringConstants.strPassword),
+              InputUtil.getInput(StringConstants.strPassword, 20, password),
               const SizedBox(
                 height: 40,
               ),
@@ -116,7 +120,14 @@ class FacebookLoginScreenState extends State<FacebookLoginScreen> {
                 width: MediaQuery.of(context).size.width,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, Routes.homeScreen);
+                    print(email.text);
+                    print(password.text);
+                    Map data = {
+                      "": email.text.trim().toString(),
+                      "": password.text.trim().toString(),
+                    };
+                    ApiService().facebookLogin(data);
+                    // Navigator.pushNamed(context, Routes.homeScreen);
                   },
                   style: ElevatedButton.styleFrom(
                     primary: ColorConstants.primaryDarkColor,
