@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "711827619011",
+    "project_id": "beep-me-74d20",
+    "storage_bucket": "beep-me-74d20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:711827619011:android:64b64e75307e3fa160b676",
+        "android_client_info": {
+          "package_name": "com.beepme.beep_me"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "711827619011-mt845lndpacounafe1mf80de1fu1olp5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA81WBmj8Hp7tANVj3HOL6dSzAAfIX3fGs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "711827619011-mt845lndpacounafe1mf80de1fu1olp5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
