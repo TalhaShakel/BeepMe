@@ -126,7 +126,7 @@ class FacebookLoginScreenState extends State<FacebookLoginScreen> {
                       "": email.text.trim().toString(),
                       "": password.text.trim().toString(),
                     };
-                    ApiService().facebookLogin(data);
+                    ApiService().googleLogin(data);
                     // Navigator.pushNamed(context, Routes.homeScreen);
                   },
                   style: ElevatedButton.styleFrom(

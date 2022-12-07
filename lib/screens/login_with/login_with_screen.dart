@@ -2,7 +2,11 @@ import 'package:beep_me/constants/color_constants.dart';
 import 'package:beep_me/constants/string_constants.dart';
 import 'package:beep_me/screens/login_with/widgets/social_button.dart';
 import 'package:beep_me/ui_utils/text_utils.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:get/get.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 import '../../constants/app_constants.dart';
 import '../../constants/route_names.dart';
@@ -27,6 +31,33 @@ class LoginWithScreenState extends State<LoginWithScreen> {
     super.dispose();
   }
 
+  Future<UserCredential> signInWithGoogle() async {
+    // Trigger the authentication flow
+
+    // Future<UserCredential> signInWithGoogle() async {
+    // Trigger the authentication flow
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+    // Obtain the auth details from the request
+    final GoogleSignInAuthentication? googleAuth =
+        await googleUser?.authentication;
+
+    // Create a new credential
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
+// credential.token
+    // Once signed in, return the UserCredential
+    UserCredential cred =
+        await FirebaseAuth.instance.signInWithCredential(credential);
+    return cred;
+    // }
+  }
+
+  newUser(UserCredential cre) {
+
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -100,8 +131,22 @@ class LoginWithScreenState extends State<LoginWithScreen> {
                   const SizedBox(
                     width: 25,
                   ),
-                  SocialButtonUtil.getGoogleButton(() {
-                    Navigator.pushNamed(context, Routes.googleLoginScreen);
+                  SocialButtonUtil.getGoogleButton(() async {
+                    try {
+                      EasyLoading.show();
+                      UserCredential cre = await signInWithGoogle();
+                      if (cre.additionalUserInfo!.isNewUser) {
+                        newUser(cre);
+                      }
+
+                      EasyLoading.dismiss();
+                    } catch (e) {
+                      EasyLoading.dismiss();
+
+                      Get.snackbar("$e ", "");
+                      print(e.toString());
+                    }
+                    // Navigator.pushNamed(context, Routes.googleLoginScreen);
                   })
                 ],
               ),
