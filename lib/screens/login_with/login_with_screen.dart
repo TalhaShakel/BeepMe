@@ -1,3 +1,4 @@
+import 'package:beep_me/Service%20and%20models/Service.dart';
 import 'package:beep_me/constants/color_constants.dart';
 import 'package:beep_me/constants/string_constants.dart';
 import 'package:beep_me/screens/login_with/widgets/social_button.dart';
@@ -47,6 +48,7 @@ class LoginWithScreenState extends State<LoginWithScreen> {
       accessToken: googleAuth?.accessToken,
       idToken: googleAuth?.idToken,
     );
+    // credential.
 // credential.token
     // Once signed in, return the UserCredential
     UserCredential cred =
@@ -55,9 +57,28 @@ class LoginWithScreenState extends State<LoginWithScreen> {
     // }
   }
 
-  newUser(UserCredential cre) {
-
+  newUser(UserCredential cre) async {
+    // gender = await GoogleSignInApi.  getGender();
+    try {
+      Map data =  {
+        "profile_name": cre.user?.displayName.toString(),
+        "social_login_provider": "google",
+        "social_login_token": cre.user!.uid,
+        "profile_image":cre.user?.photoURL.toString(),
+        "gender": "male",
+        "google_profile_link":"cred",
+        "google_id":await cre.user!.getIdToken(),
+        "email": cre.user!.email,
+      };
+      print(data);
+      await ApiService().googleLogin(data);
+      print("data uploaded");
+    } catch (e) {
+      print(e);
+      Get.snackbar("$e", "");
+    }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

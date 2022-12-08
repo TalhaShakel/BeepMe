@@ -9,11 +9,14 @@ class ApiService {
   googleLogin(data) async {
     try {
       EasyLoading.show();
+            print("data uploaded start");
+
       final uri = Uri.parse('${apiUrl}/social-login');
       print(uri);
       http.Response response = await http.post(uri, body: data);
       print(response.body);
       print(response.statusCode);
+            print("data uploaded 2");
 
       EasyLoading.dismiss();
     } catch (e) {
