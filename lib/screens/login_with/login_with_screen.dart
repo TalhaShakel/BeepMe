@@ -60,14 +60,14 @@ class LoginWithScreenState extends State<LoginWithScreen> {
   newUser(UserCredential cre) async {
     // gender = await GoogleSignInApi.  getGender();
     try {
-      Map data =  {
+      Map data = {
         "profile_name": cre.user?.displayName.toString(),
         "social_login_provider": "google",
         "social_login_token": cre.user!.uid,
-        "profile_image":cre.user?.photoURL.toString(),
+        "profile_image": cre.user?.photoURL.toString(),
         "gender": "male",
-        "google_profile_link":"cred",
-        "google_id":await cre.user!.getIdToken(),
+        "google_profile_link": "-",
+        "google_id": await cre.user!.getIdToken(),
         "email": cre.user!.email,
       };
       print(data);
